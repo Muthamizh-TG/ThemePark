@@ -114,7 +114,11 @@ def gate_check():
         for member in customer["members"]:
             if member["name"].lower() == visitor.lower():
                 found = True
-                print(f"{visitor} allowed entry! ✅ (Age: {member['age']}, Adult: {member['is_adult']})")
+                if member['is_adult']:
+                    adult = "Adult"
+                else:
+                    adult = "Kid"
+                print(f"{visitor} allowed entry! ✅ (Age: {member['age']}, Adult / Kid: {adult})")
                 if member["is_adult"]:
                     total_adults += 1
                 else:
