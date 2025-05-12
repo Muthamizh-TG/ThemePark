@@ -168,7 +168,7 @@ def main():
         elif choice == "3":
             gate_check()
         elif choice == "4":
-            print("Thank you! Come again to Black Thunder! 💙")
+            print("Thank you! Come again to Black Thunder!")
             break
         else:
             print("Invalid choice. Try again.")
