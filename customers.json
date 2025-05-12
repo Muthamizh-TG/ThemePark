@@ -1,0 +1,61 @@
+{
+    "Muthamizh": {
+        "ticket_count": 4,
+        "members": [
+            {
+                "name": "Muthamizh",
+                "age": 21,
+                "is_adult": true
+            },
+            {
+                "name": "Fant",
+                "age": 22,
+                "is_adult": true
+            },
+            {
+                "name": "Hari",
+                "age": 23,
+                "is_adult": true
+            },
+            {
+                "name": "Naveen",
+                "age": 25,
+                "is_adult": true
+            }
+        ],
+        "booking_time": "2025-05-12T11:27:06.917267",
+        "offer_applied": true
+    },
+    "Priya": {
+        "ticket_count": 5,
+        "members": [
+            {
+                "name": "Priya",
+                "age": 34,
+                "is_adult": true
+            },
+            {
+                "name": "Sana",
+                "age": 12,
+                "is_adult": false
+            },
+            {
+                "name": "Lily",
+                "age": 14,
+                "is_adult": false
+            },
+            {
+                "name": "Saran",
+                "age": 10,
+                "is_adult": false
+            },
+            {
+                "name": "fly",
+                "age": 23,
+                "is_adult": true
+            }
+        ],
+        "booking_time": "2025-05-12T11:36:47.616168",
+        "offer_applied": true
+    }
+}
