@@ -15,7 +15,7 @@ def save_data(data):
         json.dump(data, f, indent=4)
 
 def is_offer_valid(booking_time, ticket_count):
-    offer_start_time = "2025-05-12T11:00:00"
+    offer_start_time = "2025-05-12T09:30:00"
     booking_dt = datetime.fromisoformat(booking_time)
     offer_start_dt = datetime.fromisoformat(offer_start_time)
     time_diff = (booking_dt - offer_start_dt).total_seconds()
@@ -59,9 +59,9 @@ def add_customer():
 
     print(f"{name} added with {count} tickets")
     if offer_applied:
-        print("🎉 25% OFF applied!")
+        print("25% OFF applied!")
     else:
-        print("No offer applied 😢")
+        print("No offer applied")
 
 def add_member():
     data = load_data()
@@ -90,7 +90,7 @@ def add_member():
             "is_adult": is_adult
         })
 
-        print(f"{member_name} added successfully! 🎉")
+        print(f"{member_name} added successfully!")
 
     data[name] = customer
     save_data(data)
@@ -118,7 +118,7 @@ def gate_check():
                     adult = "Adult"
                 else:
                     adult = "Kid"
-                print(f"{visitor} allowed entry! ✅ (Age: {member['age']}, Adult / Kid: {adult})")
+                print(f"{visitor} allowed entry! (Age: {member['age']}, Adult / Kid: {adult})")
                 if member["is_adult"]:
                     total_adults += 1
                 else:
@@ -126,13 +126,13 @@ def gate_check():
                 break
 
         if not found:
-            print(f"{visitor} not in the member list ❌")
+            print(f"{visitor} not in the member list")
 
         again = input("Check another visitor? (yes/no): ").strip().lower()
         if again in ["yes", "y"]:
             continue
         elif again in ["no", "n"]:
-            print("\n--- 🎟️ Ticket Summary ---")
+            print("\n--- Ticket Summary ---")
             print(f"Adults Checked-in : {total_adults}")
             print(f"Kids Checked-in   : {total_kids}")
 
@@ -142,14 +142,14 @@ def gate_check():
             total_price = (total_adults * adult_price) + (total_kids * kid_price)
 
             if customer["offer_applied"]:
-                print("🎉 Offer Applied: 25% Discount!")
+                print("Offer Applied: 25% Discount!")
                 discount = total_price * 0.25
                 total_price -= discount
             else:
-                print("No Offer Applied ❌")
+                print("No Offer Applied")
 
-            print(f"💰 Final Ticket Amount: ₹{int(total_price)}")
-            print("✅ Gate Check Complete. Enjoy your time! 🛝")
+            print(f"Final Ticket Amount: ₹{int(total_price)}")
+            print("Gate Check Complete. Enjoy your time!")
             break
         else:
             print("Please type 'yes' or 'no'.")
@@ -158,7 +158,7 @@ def gate_check():
 
 def main():
     while True:
-        print("\n--- 🎢 Black Thunder Theme Park 🎢 ---")
+        print("\n--- Black Thunder Theme Park ---")
         print("1. Add a new customer")
         print("2. Add a member")
         print("3. Gate check")
@@ -177,4 +177,4 @@ def main():
         else:
             print("Invalid choice. Try again.")
 
-main()
+main()
